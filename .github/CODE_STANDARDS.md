@@ -16,6 +16,13 @@
       - [Principle](#principle)
       - [Guidelines for Writing Tests](#guidelines-for-writing-tests)
         - [Pull request title with a scope and task number](#pull-request-title-with-a-scope-and-task-number)
+    - [3.3 Branching](#33-branching)
+      - [Choosing branch names](#choosing-branch-names)
+      - [Descriptiveness](#descriptiveness)
+      - [Include Issue Number](#include-issue-number)
+      - [Deleting Branches After Merging](#deleting-branches-after-merging)
+      - [Remove Remote Branches](#remove-remote-branches)
+      - [Recommendation: Clean Local Branches](#recommendation-clean-local-branches)
   - [4. Documentation Code Standards](#4-documentation-code-standards)
     - [4.1 Overview](#41-overview)
     - [4.2 Principles](#42-principles)
@@ -35,6 +42,7 @@
 - [ ] Adhere to Conventional Commits for commit messages and PR naming.
 - [ ] Document every feature adequately, especially for open-source projects.
 - [ ] Keep documentation clear, concise, up-to-date, and accessible.
+- [ ] Branching - choose consistent naming conventions, include issue number, delete branches after merging.
 
 ## 1. Code style and formatting - official guidelines
 
@@ -214,6 +222,37 @@ debugo feature - checkpoint full work
 ##### Pull request title with a scope and task number
 
 > feat(#123): add new feature
+
+### 3.3 Branching
+
+#### Choosing branch names
+
+- Choose consistent naming conventions. Common practices include:
+  - `feature/feature-name`
+  - `bugfix/issue-or-bug-name`
+  - `hotfix/hotfix-name`
+  - `chore/task-name`
+  - `refactor/refactor-name`
+
+#### Descriptiveness
+
+- Branch names should be descriptive and represent the task/feature at hand.
+- Use hyphens to separate words for readability, e.g., `feature/add-login-button`.
+
+#### Include Issue Number
+
+- If applicable, include the issue number in the branch name for easy tracking, e.g., `feature/123-add-login-button`.
+
+#### Deleting Branches After Merging
+
+#### Remove Remote Branches
+
+- Once a PR has been merged, delete the remote branch to keep the repository clean.
+- GitHub provides a button to delete the branch once the PR is merged.
+
+#### Recommendation: Clean Local Branches
+
+- Regularly prune local branches that have been deleted remotely with `git fetch -p && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d`.
 
 ## 4. Documentation Code Standards
 
