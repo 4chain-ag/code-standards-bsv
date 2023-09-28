@@ -134,7 +134,8 @@ Of course not only error paths should be covered - **we should highlight the hap
 
 6. **Dependency Management**: Ensure that any new dependencies are necessary, appropriately versioned, and have been vetted for performance and security.
 
-7. **Security Practices**: Scrutinize the code for any security vulnerabilities. Validate input, avoid security anti-patterns, and utilize secure coding practices.
+7. **Security Practices**: Ensure that the code follows secure coding practices and avoids common vulnerabilities.
+   Good checklist for security practices can be found [here](https://owasp.org/www-project-top-ten/).
 
 8. **Documentation**: Confirm that the code is well-documented, including comments, function/method descriptions, and module-level documentation as necessary.
 
