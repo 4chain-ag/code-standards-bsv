@@ -227,7 +227,7 @@ Additional information and guidelines on Conventional Commits can be found [here
 Good example:
 
 ```bash
-feat: add possibility to create a new user by admin
+feat: add possibility to create a new user by admin (#BUX-123)
 ```
 
 Bad example:
