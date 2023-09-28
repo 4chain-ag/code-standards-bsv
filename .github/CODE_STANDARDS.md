@@ -1,9 +1,6 @@
 # Code Standards & Contributing Guidelines
 
-## Table of Contents
-
 - [Code Standards \& Contributing Guidelines](#code-standards--contributing-guidelines)
-  - [Table of Contents](#table-of-contents)
   - [Most important rules - Quick Checklist](#most-important-rules---quick-checklist)
   - [1. Code style and formatting - official guidelines](#1-code-style-and-formatting---official-guidelines)
     - [1.1 In GO applications or libraries, we follow the official guidelines](#11-in-go-applications-or-libraries-we-follow-the-official-guidelines)
