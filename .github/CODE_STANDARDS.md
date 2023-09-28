@@ -13,18 +13,6 @@
       - [Principle](#principle)
       - [Guidelines for Writing Tests](#guidelines-for-writing-tests)
         - [Pull request title with a scope and task number](#pull-request-title-with-a-scope-and-task-number)
-  - [3. Contributing](#3-contributing)
-    - [3.1 Pull Requests && Issues](#31-pull-requests--issues)
-    - [3.2 Conventional Commits & Pull Requests Naming](#32-conventional-commits--pull-requests-naming)
-      - [3.2.1 Overview](#321-overview)
-      - [3.2.2 Structure](#322-structure)
-      - [3.2.3 Types](#323-types)
-      - [3.2.4 Conventional Commits - Automatic Versioning](#324-conventional-commits---automatic-versioning)
-      - [3.2.5 Scope](#325-scope)
-      - [3.2.6 Further Reading](#326-further-reading)
-      - [3.2.7 Examples](#327-examples)
-        - [Commit message with scope](#commit-message-with-scope)
-        - [Pull request title with a scope and task number](#pull-request-title-with-a-scope-and-task-number)
     - [3.3 Branching](#33-branching)
       - [Choosing branch names](#choosing-branch-names)
       - [Descriptiveness](#descriptiveness)
@@ -212,6 +200,12 @@ It works like this:
 `fix: which represents bug fixes, and correlates to a SemVer patch.`
 `feat: which represents a new feature, and correlates to a SemVer minor.`
 `feat!:, or fix!:, refactor!:, etc., which represent a breaking change (indicated by the !) and will result in a SemVer major.`
+
+Real life example:
+
+`feat(#123)!: introduce breaking change - 1.0.0 -> 2.0.0`
+`feat(#124): introduce new feature - 2.0.0 -> 2.1.0`
+`fix(#125): fix a bug - 2.1.0 -> 2.1.1`
 
 Given a version number MAJOR.MINOR.PATCH, increment the:
 
