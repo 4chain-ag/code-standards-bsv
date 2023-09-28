@@ -191,17 +191,36 @@ When introducing breaking changes, an `!` should be appended after the `type/sco
 - `ci`: Applied to changes concerning the Continuous Integration (CI) configuration or scripts.
 - `deps`: Used when updating or modifying dependencies.
 
-#### 3.2.4 Scope
+#### 3.2.4 Conventional Commits - Automatic Versioning
+
+In our repositories, we use Conventional Commits to automatically generate the version number for our releases.
+
+It works like this:
+
+`fix: which represents bug fixes, and correlates to a SemVer patch.`
+`feat: which represents a new feature, and correlates to a SemVer minor.`
+`feat!:, or fix!:, refactor!:, etc., which represent a breaking change (indicated by the !) and will result in a SemVer major.`
+
+Given a version number MAJOR.MINOR.PATCH, increment the:
+
+MAJOR version when you make incompatible API changes
+MINOR version when you add functionality in a backward compatible manner
+PATCH version when you make backward compatible bug fixes
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
+More about Semantic Versioning can be found [here](https://semver.org/).
+
+#### 3.2.5 Scope
 
 We have standardized the use of JIRA/GitHub issue numbers as the `scope` in commits within our team. This practice aids in easily tracing the origin of changes.
 
 In the absence of an existing issue for your changes, please create one in the client’s JIRA system. If the change is not client-related, establish a GitHub issue in the repository.
 
-#### 3.2.5 Further Reading
+#### 3.2.6 Further Reading
 
 Additional information and guidelines on Conventional Commits can be found [here](https://www.conventionalcommits.org/en/v1.0.0/).
 
-#### 3.2.6 Examples
+#### 3.2.7 Examples
 
 ##### Commit message with scope
 
