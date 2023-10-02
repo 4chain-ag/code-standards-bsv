@@ -10,16 +10,10 @@
 
 # Pull Request Template
 
-## What type of PR is this?
+## PR Title as Conventional Commit
 
-- [ ] Refactor
-- [ ] Feature
-- [ ] Bug Fix
-- [ ] Security Fix/Improvement
-- [ ] Optimization
-- [ ] Documentation Update
-
-## Description
+Your PR title should also be a [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/).
+This will help us with our release process and assigning semantic version numbers to releases.
 
 ## Related Tickets & Documents
 
@@ -30,16 +24,12 @@ below.  We like to follow [Github's guidance on linking issues to pull requests]
 For example having the text: "closes #1234" would connect the current pull
 request to issue 1234.  And when we merge the pull request, Github will
 automatically close the issue.
--->
 
+Uncomment the lines below and replace the issue number with the issue
 - Related Issue #
 - Closes #
+-->
 
-## QA Instructions, Screenshots, Recordings
+## Feature/Issue details
 
-_Please replace this line with instructions on how to test your changes, and all relevant notes on functionality. Screenshots, recordings are encouraged!_
-
-_For more info, check out the
-[Forem Accessibility Docs](https://developers.forem.com/frontend/accessibility)._
-
-## [optional] Are there any post deployment tasks we need to perform?
+Pull request should be strongly connected to a feature or issue. Please make sure that you covered all necessary paths and there is a possibility to test code behaviour following issue description or feature specification.
