@@ -1,35 +1,36 @@
-<!--
-     Before submitting a Pull Request, please ensure you've done the following:
-     - 📖 Read our Contributing Guide & Coding Standards: https://github.com/4chain-ag/code-standards-bsv/blob/main/.github/CODE_STANDARDS.md
-     - 📖 Read the short Code of Conduct: https://github.com/4chain-ag/code-standards-bsv/blob/main/.github/CODE_OF_CONDUCT.md
-     - 👷‍♀️ Created small PRs. In most cases this will be possible.
-     - ✅ Provided tests for your changes.
-     - 📝 Used conventional commits.
-     - 📗 Update any related documentation.
+<!-- 
+    Thank you for contributing to our project! Before you submit your Pull Request, please make sure you've completed the items in this checklist.
 -->
 
-# Pull Request Template
+# Pull Request Checklist
 
+- [ ] 📖 I created my PR using provided  : [CODE_STANDARDS](https://github.com/4chain-ag/code-standards-bsv/blob/main/.github/CODE_STANDARDS.md)
+- [ ] 📖 I have read the short Code of Conduct: [CODE_OF_CONDUCT](https://github.com/4chain-ag/code-standards-bsv/blob/main/.github/CODE_OF_CONDUCT.md)
+- [ ] 🏠 I tested my changes locally.
+- [ ] ✅ I have provided tests for my changes.
+- [ ] 📝 I have used conventional commits.
+- [ ] 📗 I have updated any related documentation.
+- [ ] 💾 PR was issued based on the issue/Jira task.
+
+<!-- 
 ## PR Title as Conventional Commit
 
-Your PR title should also be a [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/).
-This will help us with our release process and assigning semantic version numbers to releases.
+Your PR title should also be a [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/). This will assist us in our release process and in assigning semantic version numbers to releases.
+-->
 
+<!-- 
 ## Related Tickets & Documents
 
-<!--
-For pull requests that relate or close an issue, please include them
-below.  We like to follow [Github's guidance on linking issues to pull requests](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
+If your changes relate to or close an issue, please include them below. We like to follow [Github's guidance on linking issues to pull requests](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
 
-For example having the text: "closes #1234" would connect the current pull
-request to issue 1234.  And when we merge the pull request, Github will
-automatically close the issue.
+For instance, having the text "closes #1234" would link the current pull request to issue number 1234. And when we merge the pull request, Github will automatically close the issue.
 
-Uncomment the lines below and replace the issue number with the issue
 - Related Issue #
 - Closes #
 -->
 
-## Feature/Issue details
+<!--
+## Feature/Issue Details
 
-Pull request should be strongly connected to a feature or issue. Please make sure that you covered all necessary paths and there is a possibility to test code behaviour following issue description or feature specification.
+Your pull request should be tightly connected to a feature or issue. Ensure that you've covered all necessary pathways and there's a possibility to test code behavior following the issue description or feature specification.
+-->
