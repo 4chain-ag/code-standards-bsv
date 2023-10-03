@@ -37,3 +37,5 @@ The primary goal of this project is to foster an inclusive, respectful, and open
 - **Courtesy:** Be courteous and polite. Treat others as you would like to be treated.
 
 By participating in this project, you agree to abide by this Code of Conduct. Let’s work together to make this community respectful and inclusive for everyone.
+
+[//]: # (Examle change)
