@@ -1,5 +1,6 @@
 <!-- 
     Thank you for contributing to our project! Before you submit your Pull Request, please make sure you've completed the items in this checklist.
+    Please check the boxes below by putting an x in the [ ] like so: [x]. You can do it right after creating the PR.
 -->
 
 # Pull Request Checklist
