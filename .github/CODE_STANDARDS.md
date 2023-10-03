@@ -40,6 +40,7 @@
 - [ ] Document every feature adequately, especially for open-source projects.
 - [ ] Keep documentation clear, concise, up-to-date, and accessible.
 - [ ] Branching - choose consistent naming conventions, include issue number, delete branches after merging.
+- [ ] Don't use Windows
 
 ## 1. Code style and formatting - official guidelines
 
