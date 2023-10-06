@@ -3,7 +3,7 @@
 - [Code Standards \& Contributing Guidelines](#code-standards--contributing-guidelines)
   - [Most important rules - Quick Checklist](#most-important-rules---quick-checklist)
   - [1. Code style and formatting - official guidelines](#1-code-style-and-formatting---guidelines-and-useful-links)
-    - [1.1 Good and useful guidelines for frontend applications or libraries](#11-good-and-useful-guidelines-for-frontend-applications-or-libraries]
+    - [1.1 Good and useful guidelines for frontend applications or libraries](#11-good-and-useful-guidelines-for-frontend-applications-or-libraries)
   - [2. Code Rules](#2-code-rules)
     - [2.1 General Rules](#21-general-rules)
     - [2.2 File structure](#22-file-structure)
