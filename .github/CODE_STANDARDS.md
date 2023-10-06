@@ -2,17 +2,21 @@
 
 - [Code Standards \& Contributing Guidelines](#code-standards--contributing-guidelines)
   - [Most important rules - Quick Checklist](#most-important-rules---quick-checklist)
-  - [1. Code style and formatting - official guidelines](#1-code-style-and-formatting---official-guidelines)
-    - [1.1 In GO applications or libraries, we follow the official guidelines](#11-in-go-applications-or-libraries-we-follow-the-official-guidelines)
-      - [Additional useful resources with GO recommendations, best practices and the common mistakes](#additional-useful-resources-with-go-recommendations-best-practices-and-the-common-mistakes)
+  - [1. Code style and formatting - official guidelines](#1-code-style-and-formatting---guidelines-and-useful-links)
+    - [1.1 Good and useful guidelines for frontend applications or libraries](#11-good-and-useful-guidelines-for-frontend-applications-or-libraries]
   - [2. Code Rules](#2-code-rules)
-    - [2.1. Self-documenting code](#21-self-documenting-code)
+    - [2.1. General Rules](#21-general-rules)
+    - [2.2 File structure](#22-file-structure)
+    - [2.3. Self-documenting code](#23-self-documenting-code)
       - [As a Developer](#as-a-developer)
       - [As a PR Reviewer](#as-a-pr-reviewer)
-    - [2.2. Tests](#22-tests)
+    - [2.4. Tests](#24-tests)
       - [Principle](#principle)
       - [Guidelines for Writing Tests](#guidelines-for-writing-tests)
         - [Pull request title with a scope and task number](#pull-request-title-with-a-scope-and-task-number)
+    - [2.5. Code Review]
+      - [Guidelines for Code Review](#guidelines-for-code-review)
+      - [Code Review Checklist](#code-review-checklist)
     - [3.3 Branching](#33-branching)
       - [Choosing branch names](#choosing-branch-names)
       - [Descriptiveness](#descriptiveness)
@@ -32,7 +36,7 @@
 
 ## Most important rules - Quick Checklist
 
-- [ ] Follow official Go guidelines for style and formatting.
+- [ ] Follow guidelines and local formatting and linting settings (like prettier) for style and formatting.
 - [ ] Write self-documenting code and minimize comments.
 - [ ] Ensure comprehensive test coverage including happy and error paths.
 - [ ] Provide meaningful and constructive code reviews.
@@ -41,27 +45,112 @@
 - [ ] Keep documentation clear, concise, up-to-date, and accessible.
 - [ ] Branching - choose consistent naming conventions, include issue number, delete branches after merging.
 
-## 1. Code style and formatting - official guidelines
+## 1. Code style and formatting - guidelines and useful links
 
-### 1.1 In GO applications or libraries, we follow the official guidelines
+### 1.1 Good and useful guidelines for frontend applications or libraries
 
-- [Effective Go](https://go.dev/doc/effective_go) - official Go guidelines
-- [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments) - official Go code review comments
-- [Go Examples](https://pkg.go.dev/testing#hdr-Examples) - official Go examples - used in libraries to explain how to use their exposed features
-- [Go Test](https://pkg.go.dev/testing) - official Go testing package & recommendations
-- [Go Linter](https://golangci-lint.run/) - golangci-lint - only codestyle checks
-
- > Our current linter configuration is in the `.golangci.yml` file.
-
-#### Additional useful resources with GO recommendations, best practices and the common mistakes
-
-- [Go Styles by Google](https://google.github.io/styleguide/go/) - Google's Go Style Guide
-- [Uber Go Style Guide](https://github.com/uber-go/guide/blob/master/style.md) - Uber's Go Style Guide
-- [Go Common Mistakes](https://github.com/golang/go/wiki/CommonMistakes) - Common Mistakes in Go
+- [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) - Google's coding standards for JavaScript.
+- [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html) - Google's coding standards for TypeScript.
+- [Thinking in React](https://react.dev/learn/thinking-in-react) - good for beginners to start thinking in terms of React Components.
+- [Node.js best practices](https://github.com/goldbergyoni/nodebestpractices) - summary and curation of the top-ranked content on Node.js best practices.
+- [Mozilla's Guidelines for JavaScript](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript) - Mozilla's guidelines for JavaScript with code examples.
 
 ## 2. Code Rules
 
-### 2.1. Self-documenting code
+### 2.1 General rules
+
+- Use `undefined` instead of `null` whenever possible.
+
+```ts
+type Person {
+	name: string
+	address: Address | null 	 🟥
+	address: Address | undefined ?
+}
+```
+
+- Whenever writing TypeScript code, avoid using `any` and always annotate types for Props passed to a Component.
+
+```ts
+type MyComponentProps {
+	setName: any 										  ??
+	setName: React.Dispatch<React.SetStateAction<string>> ?
+}
+
+const MyComponent = (props: any) => {} 						??
+const MyComponent: FC<MyComponentProps> = ({setName}) => {} ?
+```
+
+- Use curly braces `{}` instead of `new Object()`.
+
+```ts
+const newObject = new Object()	??
+const newObject = {}			?
+```
+
+- Use brackets `[]` instead of `new Array()`.
+- 
+```ts
+const newArray = new Array()	??
+const newArray = []				?
+```
+
+- Use `===` and `!==` instead of `==` and `!=`.
+
+```ts
+if (oneObject == anotherObject) {}	??
+if (oneObject === anotherObject) {}	?
+```
+
+- When writing html/jsx/tsx, use proper html tags, suitable for a given component.
+
+```jsx
+return (
+	<>
+		<navbar>
+			<MyNavBarComponent />
+		</navbar>
+		<main>
+			<MyMainSectionComponent />
+		</main>
+		<footer>
+			<MyFooterComponent />
+		</footer>
+	</>
+```
+
+List of all categorized html tags with short description: [HTML Elements Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+
+- When an import needs to go to more than one directory above, use full-path imports.
+
+```typescript
+import { MyComponent } from "../../../MyComponent"			??
+import { MyComponent } from "/src/components/MyComponent"	?
+```
+
+### 2.2 File structure
+
+Every component should have a folder with the name of that component. In that folder, you should keep an index.{js/ts} file, to export that component, a component itself and all the files that only this component refrences: style files, custom hooks, etc.
+
+Style files should take the name of the component with the suffix .style.{js/ts}. For example: `MyComponent.style.js`.
+Custom hooks can take the name of use\<componentName\>.{js/tx}. For example: `useMyComponent.js`.
+
+Example:
+```
+|-- index.html
+|-- index.js
+|-- package.json
+|-- package-lock.json
+|-- README.md
+`-- src/
+    |-- app.js
+    `-- MyComponent/
+        |-- MyComponent.js
+        |-- MyComponent.style.js
+        |-- useMyComponent.js
+```
+
+### 2.3. Self-documenting code
 
 #### As a Developer
 
@@ -75,7 +164,7 @@
 - Be vigilant of newly added comments during reviews. If a comment appears unnecessary, uninformative, or could be replaced with a function, do not hesitate to highlight this.
 - Assess the meaningfulness and clarity of function names, ensuring they contribute to self-documenting code.
 
-### 2.2. Tests
+### 2.4. Tests
 
 #### Principle
 
@@ -93,17 +182,20 @@ Developers are required to diligently cover their changes with tests and organiz
    - **When**: Trigger the action or function under test.
    - **Then**: Verify if the outcomes match the expectations.
 
-   ```go
-   func TestSomethingVeryUsefulIsHappening(t *testing.T) {
-       //given
-       ... // prepare inputs, mocks, application state
-   
-       //when
-       ... // call the function you're actually testing
-   
-       //then
-       ... // check expectations about the function output
-   }
+   ```js
+   import { importantFunction } from "./index.js"
+
+   test("Test Something Very Useful Is Happening", () => {
+     // given
+     const functionInput = "importantInput"
+     const expectedResult = "importantResult"
+
+     // when
+     const result = importantFunction(functionInput)
+
+     // then
+     expect(result).toBe(expectedResult)
+   })
     ```
 
 4. **Test Isolation**: Ensure test isolation by avoiding the use of global variables and shared state. Each test should be independent and not rely on the execution of other tests. If a test requires a shared state, use a setup function to create the state before each test.
@@ -115,7 +207,7 @@ Of course not only error paths should be covered - **we should highlight the hap
 
 7. **Testing private (unexported) functions**: When testing private functions, we should test them through the public (exported) functions that use them. The exception is when the private function is too complex to be tested through the public function. Good example is for example a function that is implementing a complex algorithm. In this case we should test the private function directly.
 
-### 2.3 Code Review
+### 2.5 Code Review
 
 #### Guidelines for Code Review
 
@@ -140,7 +232,7 @@ Of course not only error paths should be covered - **we should highlight the hap
 
 10. **Responsiveness**: Both authors and reviewers should be timely in their responses. Authors should address all review comments, and reviewers should re-review changes promptly.
 
-#### 2.3.3 Code Review Checklist
+#### Code Review Checklist
 
 - [ ] Does the code adhere to the project’s coding standards?
 - [ ] Are there sufficient tests, and do they cover a variety of cases?
