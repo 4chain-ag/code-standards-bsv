@@ -1,11 +1,11 @@
 # Code Standards & Contributing Guidelines
 
-- [Code Standards \& Contributing Guidelines](#code-standards--contributing-guidelines)
+- [Code Standards & Contributing Guidelines](#code-standards---contributing-guidelines)
   - [Most important rules - Quick Checklist](#most-important-rules---quick-checklist)
-  - [1. Code style and formatting - official guidelines](#1-code-style-and-formatting---guidelines-and-useful-links)
+  - [1. Code style and formatting - guidelines and useful links](#1-code-style-and-formatting---guidelines-and-useful-links)
     - [1.1 Good and useful guidelines for frontend applications or libraries](#11-good-and-useful-guidelines-for-frontend-applications-or-libraries)
   - [2. Code Rules](#2-code-rules)
-    - [2.1 General Rules](#21-general-rules)
+    - [2.1 General rules](#21-general-rules)
     - [2.2 File structure](#22-file-structure)
     - [2.3 Self-documenting code](#23-self-documenting-code)
       - [As a Developer](#as-a-developer)
@@ -13,17 +13,28 @@
     - [2.4 Tests](#24-tests)
       - [Principle](#principle)
       - [Guidelines for Writing Tests](#guidelines-for-writing-tests)
-        - [Pull request title with a scope and task number](#pull-request-title-with-a-scope-and-task-number)
     - [2.5 Code Review](#25-code-review)
       - [Guidelines for Code Review](#guidelines-for-code-review)
       - [Code Review Checklist](#code-review-checklist)
+  - [3. Contributing](#3-contributing)
+    - [3.1 Pull Requests && Issues](#31-pull-requests----issues)
+    - [3.2 Conventional Commits & Pull Requests Naming](#32-conventional-commits---pull-requests-naming)
+      - [3.2.1 Overview](#321-overview)
+      - [3.2.2 Structure](#322-structure)
+      - [3.2.3 Types](#323-types)
+      - [3.2.4 Conventional Commits - Automatic Versioning](#324-conventional-commits---automatic-versioning)
+      - [3.2.5 Scope](#325-scope)
+      - [3.2.6 Further Reading](#326-further-reading)
+      - [3.2.7 Examples](#327-examples)
+        - [Commit message with scope](#commit-message-with-scope)
+        - [Pull request title with a scope and task number](#pull-request-title-with-a-scope-and-task-number)
     - [3.3 Branching](#33-branching)
       - [Choosing branch names](#choosing-branch-names)
       - [Descriptiveness](#descriptiveness)
       - [Include Issue Number](#include-issue-number)
       - [Deleting Branches After Merging](#deleting-branches-after-merging)
       - [Remove Remote Branches](#remove-remote-branches)
-      - [Recommendation: Clean Local Branches](#recommendation-clean-local-branches)
+      - [Recommendation: Clean Local Branches](#recommendation--clean-local-branches)
   - [4. Documentation Code Standards](#4-documentation-code-standards)
     - [4.1 Overview](#41-overview)
     - [4.2 Principles](#42-principles)
@@ -33,6 +44,7 @@
     - [4.4 External Features](#44-external-features)
     - [4.5 Markdown usage](#45-markdown-usage)
     - [4.5 Conclusion](#45-conclusion)
+
 
 ## Most important rules - Quick Checklist
 
@@ -63,9 +75,9 @@
 
 ```ts
 type Person {
-	name: string
-	address: Address | null				🟥
-	address: Address | undefined	✅
+  name: string
+  address: Address | null	🟥
+  address: Address | undefined	✅
 }
 ```
 
@@ -73,11 +85,11 @@ type Person {
 
 ```ts
 type MyComponentProps {
-	setName: any 																					🟥
-	setName: React.Dispatch<React.SetStateAction<string>>	✅
+  setName: any 						🟥
+  setName: React.Dispatch<React.SetStateAction<string>>	✅
 }
 
-const MyComponent = (props: any) => {} 											🟥
+const MyComponent = (props: any) => {} 				🟥
 const MyComponent: FC<MyComponentProps> = ({setName}) => {}	✅
 ```
 
@@ -85,14 +97,14 @@ const MyComponent: FC<MyComponentProps> = ({setName}) => {}	✅
 
 ```ts
 const newObject = new Object()	🟥
-const newObject = {}						✅
+const newObject = {}		✅
 ```
 
 - Use brackets `[]` instead of `new Array()`.
 - 
 ```ts
 const newArray = new Array()	🟥
-const newArray = []						✅
+const newArray = []		✅
 ```
 
 - Use `===` and `!==` instead of `==` and `!=`.
@@ -106,17 +118,17 @@ if (oneObject === anotherObject) {}	✅
 
 ```jsx
 return (
-	<>
-		<navbar>
-			<MyNavBarComponent />
-		</navbar>
-		<main>
-			<MyMainSectionComponent />
-		</main>
-		<footer>
-			<MyFooterComponent />
-		</footer>
-	</>
+  <>
+    <navbar>
+	<MyNavBarComponent />
+    </navbar>
+    <main>
+	<MyMainSectionComponent />
+    </main>
+    <footer>
+	<MyFooterComponent />
+    </footer>
+  </>
 ```
 
 List of all categorized html tags with short description: [HTML Elements Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
@@ -124,7 +136,7 @@ List of all categorized html tags with short description: [HTML Elements Referen
 - When an import needs to go to more than one directory above, use full-path imports.
 
 ```typescript
-import { MyComponent } from "../../../MyComponent"				🟥
+import { MyComponent } from "../../../MyComponent"		🟥
 import { MyComponent } from "/src/components/MyComponent"	✅
 ```
 
