@@ -71,50 +71,67 @@
 
 ### 2.1 General rules
 
-- Use `undefined` instead of `null` whenever possible.
+- When possible, use default values of a given type rather than `null` or `undefined` values.
 
 ```ts
-type Person {
-  name: string
-  address: Address | null	🟥
-  address: Address | undefined	✅
+const person = {
+  firstName: "Bill",
+  lastName: null,  // 🟥
+  lastName: "",    // ✅
 }
+```
+
+- If for some reason a default value cannot be assigned or it is impractical to assign a default value, assign a `null` value rather than an `undefined` value.
+
+```ts
+const person = {
+  firstName: "Bill",
+  address: undefined, // 🟥
+  address: null,      // ✅
+}
+```
+
+- When code you have no control over (external library) or JavaScript itself may return undefined, convert it to null (or preferably to a default value if possible).
+
+```ts
+const found = arr.find((item) => item > 5);         // 🟥
+const found = arr.find((item) => item > 5) ?? null; // ✅
 ```
 
 - Whenever writing TypeScript code, avoid using `any` and always annotate types for Props passed to a Component.
 
 ```ts
-type MyComponentProps {
-  setName: any 						🟥
-  setName: React.Dispatch<React.SetStateAction<string>>	✅
+interface MyComponentProps {
+  setName: any                                           // 🟥
+  setName: React.Dispatch<React.SetStateAction<string>>  // ✅
 }
 
-const MyComponent = (props: any) => {} 				🟥
-const MyComponent: FC<MyComponentProps> = ({setName}) => {}	✅
+const MyComponent = (props: any) => {}                      // 🟥
+const MyComponent: FC<MyComponentProps> = ({setName}) => {} // ✅
 ```
 
 - Use curly braces `{}` instead of `new Object()`.
 
 ```ts
-const newObject = new Object()	🟥
-const newObject = {}		✅
+const newObject = new Object()  // 🟥
+const newObject = {}            // ✅
 ```
 
 - Use brackets `[]` instead of `new Array()`.
-- 
+ 
 ```ts
-const newArray = new Array()	🟥
-const newArray = []		✅
+const newArray = new Array()  // 🟥
+const newArray = []           // ✅
 ```
 
 - Use `===` and `!==` instead of `==` and `!=`.
 
 ```ts
-if (oneObject == anotherObject) {}	🟥
-if (oneObject === anotherObject) {}	✅
+if (oneObject == anotherObject) {}   // 🟥
+if (oneObject === anotherObject) {}  // ✅
 ```
 
-- When writing html/jsx/tsx, use proper html tags, suitable for a given component.
+- When writing html/jsx/tsx, use proper semantic html tags, suitable for a given component.
 
 ```jsx
 return (
@@ -136,8 +153,8 @@ List of all categorized html tags with short description: [HTML Elements Referen
 - When an import needs to go to more than one directory above, use full-path imports.
 
 ```typescript
-import { MyComponent } from "../../../MyComponent"		🟥
-import { MyComponent } from "/src/components/MyComponent"	✅
+import { MyComponent } from "../../../MyComponent"         // 🟥
+import { MyComponent } from "/src/components/MyComponent"  // ✅
 ```
 
 ### 2.2 File structure
