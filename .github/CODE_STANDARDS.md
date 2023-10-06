@@ -5,16 +5,16 @@
   - [1. Code style and formatting - official guidelines](#1-code-style-and-formatting---guidelines-and-useful-links)
     - [1.1 Good and useful guidelines for frontend applications or libraries](#11-good-and-useful-guidelines-for-frontend-applications-or-libraries]
   - [2. Code Rules](#2-code-rules)
-    - [2.1. General Rules](#21-general-rules)
+    - [2.1 General Rules](#21-general-rules)
     - [2.2 File structure](#22-file-structure)
-    - [2.3. Self-documenting code](#23-self-documenting-code)
+    - [2.3 Self-documenting code](#23-self-documenting-code)
       - [As a Developer](#as-a-developer)
       - [As a PR Reviewer](#as-a-pr-reviewer)
-    - [2.4. Tests](#24-tests)
+    - [2.4 Tests](#24-tests)
       - [Principle](#principle)
       - [Guidelines for Writing Tests](#guidelines-for-writing-tests)
         - [Pull request title with a scope and task number](#pull-request-title-with-a-scope-and-task-number)
-    - [2.5. Code Review]
+    - [2.5 Code Review]
       - [Guidelines for Code Review](#guidelines-for-code-review)
       - [Code Review Checklist](#code-review-checklist)
     - [3.3 Branching](#33-branching)
@@ -150,7 +150,7 @@ Example:
         |-- useMyComponent.js
 ```
 
-### 2.3. Self-documenting code
+### 2.3 Self-documenting code
 
 #### As a Developer
 
@@ -164,7 +164,7 @@ Example:
 - Be vigilant of newly added comments during reviews. If a comment appears unnecessary, uninformative, or could be replaced with a function, do not hesitate to highlight this.
 - Assess the meaningfulness and clarity of function names, ensuring they contribute to self-documenting code.
 
-### 2.4. Tests
+### 2.4 Tests
 
 #### Principle
 
