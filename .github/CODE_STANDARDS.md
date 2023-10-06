@@ -14,7 +14,7 @@
       - [Principle](#principle)
       - [Guidelines for Writing Tests](#guidelines-for-writing-tests)
         - [Pull request title with a scope and task number](#pull-request-title-with-a-scope-and-task-number)
-    - [2.5 Code Review]
+    - [2.5 Code Review](#25-code-review)
       - [Guidelines for Code Review](#guidelines-for-code-review)
       - [Code Review Checklist](#code-review-checklist)
     - [3.3 Branching](#33-branching)
