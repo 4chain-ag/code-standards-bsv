@@ -64,8 +64,8 @@
 ```ts
 type Person {
 	name: string
-	address: Address | null 	 🟥
-	address: Address | undefined ?
+	address: Address | null				🟥
+	address: Address | undefined	✅
 }
 ```
 
@@ -73,33 +73,33 @@ type Person {
 
 ```ts
 type MyComponentProps {
-	setName: any 										  ??
-	setName: React.Dispatch<React.SetStateAction<string>> ?
+	setName: any 																					🟥
+	setName: React.Dispatch<React.SetStateAction<string>>	✅
 }
 
-const MyComponent = (props: any) => {} 						??
-const MyComponent: FC<MyComponentProps> = ({setName}) => {} ?
+const MyComponent = (props: any) => {} 											🟥
+const MyComponent: FC<MyComponentProps> = ({setName}) => {}	✅
 ```
 
 - Use curly braces `{}` instead of `new Object()`.
 
 ```ts
-const newObject = new Object()	??
-const newObject = {}			?
+const newObject = new Object()	🟥
+const newObject = {}						✅
 ```
 
 - Use brackets `[]` instead of `new Array()`.
 - 
 ```ts
-const newArray = new Array()	??
-const newArray = []				?
+const newArray = new Array()	🟥
+const newArray = []						✅
 ```
 
 - Use `===` and `!==` instead of `==` and `!=`.
 
 ```ts
-if (oneObject == anotherObject) {}	??
-if (oneObject === anotherObject) {}	?
+if (oneObject == anotherObject) {}	🟥
+if (oneObject === anotherObject) {}	✅
 ```
 
 - When writing html/jsx/tsx, use proper html tags, suitable for a given component.
@@ -124,8 +124,8 @@ List of all categorized html tags with short description: [HTML Elements Referen
 - When an import needs to go to more than one directory above, use full-path imports.
 
 ```typescript
-import { MyComponent } from "../../../MyComponent"			??
-import { MyComponent } from "/src/components/MyComponent"	?
+import { MyComponent } from "../../../MyComponent"				🟥
+import { MyComponent } from "/src/components/MyComponent"	✅
 ```
 
 ### 2.2 File structure
