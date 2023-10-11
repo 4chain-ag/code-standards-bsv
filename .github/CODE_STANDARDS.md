@@ -1,10 +1,10 @@
 # Code Standards & Contributing Guidelines
 
-- [Code Standards \& Contributing Guidelines](#code-standards--contributing-guidelines)
+- [Code Standards & Contributing Guidelines](#code-standards---contributing-guidelines)
   - [Most important rules - Quick Checklist](#most-important-rules---quick-checklist)
   - [1. Code style and formatting - official guidelines](#1-code-style-and-formatting---official-guidelines)
-    - [1.1 In GO applications or libraries, we follow the official guidelines](#11-in-go-applications-or-libraries-we-follow-the-official-guidelines)
-      - [Additional useful resources with GO recommendations, best practices and the common mistakes](#additional-useful-resources-with-go-recommendations-best-practices-and-the-common-mistakes)
+    - [1.1 In GO applications or libraries, we follow the official guidelines](#11-in-go-applications-or-libraries--we-follow-the-official-guidelines)
+      - [Additional useful resources with GO recommendations, best practices and the common mistakes](#additional-useful-resources-with-go-recommendations--best-practices-and-the-common-mistakes)
   - [2. Code Rules](#2-code-rules)
     - [2.1. Self-documenting code](#21-self-documenting-code)
       - [As a Developer](#as-a-developer)
@@ -12,6 +12,20 @@
     - [2.2. Tests](#22-tests)
       - [Principle](#principle)
       - [Guidelines for Writing Tests](#guidelines-for-writing-tests)
+    - [2.3 Code Review](#23-code-review)
+      - [Guidelines for Code Review](#guidelines-for-code-review)
+      - [Code Review Checklist](#code-review-checklist)
+  - [3. Contributing](#3-contributing)
+    - [3.1 Pull Requests && Issues](#31-pull-requests----issues)
+    - [3.2 Conventional Commits & Pull Requests Naming](#32-conventional-commits---pull-requests-naming)
+      - [3.2.1 Overview](#321-overview)
+      - [3.2.2 Structure](#322-structure)
+      - [3.2.3 Types](#323-types)
+      - [3.2.4 Conventional Commits - Automatic Versioning](#324-conventional-commits---automatic-versioning)
+      - [3.2.5 Scope](#325-scope)
+      - [3.2.6 Further Reading](#326-further-reading)
+      - [3.2.7 Examples](#327-examples)
+        - [Commit message with scope](#commit-message-with-scope)
         - [Pull request title with a scope and task number](#pull-request-title-with-a-scope-and-task-number)
     - [3.3 Branching](#33-branching)
       - [Choosing branch names](#choosing-branch-names)
@@ -19,7 +33,7 @@
       - [Include Issue Number](#include-issue-number)
       - [Deleting Branches After Merging](#deleting-branches-after-merging)
       - [Remove Remote Branches](#remove-remote-branches)
-      - [Recommendation: Clean Local Branches](#recommendation-clean-local-branches)
+      - [Recommendation: Clean Local Branches](#recommendation--clean-local-branches)
   - [4. Documentation Code Standards](#4-documentation-code-standards)
     - [4.1 Overview](#41-overview)
     - [4.2 Principles](#42-principles)
@@ -29,6 +43,8 @@
     - [4.4 External Features](#44-external-features)
     - [4.5 Markdown usage](#45-markdown-usage)
     - [4.5 Conclusion](#45-conclusion)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Most important rules - Quick Checklist
 
@@ -140,7 +156,7 @@ Of course not only error paths should be covered - **we should highlight the hap
 
 10. **Responsiveness**: Both authors and reviewers should be timely in their responses. Authors should address all review comments, and reviewers should re-review changes promptly.
 
-#### 2.3.3 Code Review Checklist
+#### Code Review Checklist
 
 - [ ] Does the code adhere to the project’s coding standards?
 - [ ] Are there sufficient tests, and do they cover a variety of cases?
